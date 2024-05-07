@@ -1,0 +1,19 @@
+public static void divisaoComOSegundoNumeroDiferenteDeZERO(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Escreva um valor:");
+        int n1 = s.nextInt();
+        System.out.println("Escreva outro valor:");
+        int n2 = s.nextInt();
+
+        if(n2 == 0) {
+            for(int r = 0; r == 0 ; r++){
+                System.out.println("Escreva outro valor diferente de ZERO:");
+                n2 = s.nextInt();
+            }
+            System.out.println(n1 / n2);
+        }
+        else{
+            System.out.println(n1 / n2);
+        }
+    }
