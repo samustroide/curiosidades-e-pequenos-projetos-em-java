@@ -1,0 +1,356 @@
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercícios_Resolução {
+    public static void main(String[] args) {
+        //exercício_37();
+        //exercício_38();
+
+        ///////////////
+
+        exercício_40();
+        //exercício_41();
+        //exercício_42();
+        //exercício_43();
+        //exercício_44();
+
+        ///////////////
+
+        //exercício_50();
+        //exercício_51();
+        //exercício_52();
+        //exercício_53();
+        //exercício_54();
+        //exercício_55();
+        //exercício_56();
+        //exercício_57();
+        //exercício_58();
+        //exercício_59();
+        //exercício_60();
+        //exercício_61();
+        //exercício_62();
+        //exercício_63();
+        //exercício_64();
+        //exercício_65();
+    }
+    public static void exercício_37(){
+        Scanner s = new Scanner(System.in);
+
+        Double preçoDaMaçãAté5 = 1.80;
+        Double preçoDaMaçãAcimaDe5 = 1.50;
+        Double preçoDoMorangoAté5 = 2.50;
+        Double preçoDoMorangoAcimaDe5 = 2.20;
+
+        System.out.println("Quantos Kg de maçã vocẽ vai querer:");
+        Double kgMaçã = s.nextDouble();
+        System.out.println("Quantos Kg de morango vocẽ vai querer:");
+        Double kgMorango = s.nextDouble();
+
+        Double totalDaMaçãAcimaDe5 = kgMaçã * preçoDaMaçãAcimaDe5;
+        Double totalDaMaçãAté5 = kgMaçã * preçoDaMaçãAté5;
+        Double totaDoMorangoAté5 = kgMorango * preçoDoMorangoAté5;
+        Double totalDoMorangoAcimaDe5 = kgMorango * preçoDoMorangoAcimaDe5;
+        Double preçoTotalSeAté8 = totalDaMaçãAté5 + totaDoMorangoAté5;
+        Double meioTotal1 = totalDaMaçãAté5 + totaDoMorangoAté5;
+        Double preçoTotalSeAcimaDe8 = meioTotal1 / 100 * 80;
+        Double meioTotal2 = totalDaMaçãAcimaDe5 + totalDoMorangoAcimaDe5;
+        Double preçoTotalSeAcimaDe8e5 = meioTotal2 / 100 * 80;
+
+        if(kgMaçã + kgMorango <= 8) {
+            System.out.println("Você terá que pagar " + preçoTotalSeAté8 + " Reais");
+        }
+        else if(kgMaçã + kgMorango > 8 && kgMaçã <= 5 && kgMorango <= 5) {
+            System.out.println("Você terá que pagar " + preçoTotalSeAcimaDe8 + " Reais");
+        }
+        else {
+            System.out.println("Você terá que pagar " + preçoTotalSeAcimaDe8e5 + " Reais");
+        }
+    }
+    public static void exercício_38(){
+        Scanner s = new Scanner(System.in);
+
+        int usuárioValido = 1234;
+        int senhaCerta = 9999;
+
+        System.out.println("Digite o número do usuário:");
+        int usuárioDigitado = s.nextInt();
+        if(usuárioDigitado != usuárioValido) {
+            System.out.println("Usuário inválido");
+        }
+        else{
+            System.out.println("Escreva a senha de usuário:");
+            int senhaDigitada = s.nextInt();
+            if(senhaDigitada != senhaCerta) {
+                System.out.println("SENHA INCORRETA!");
+            }
+            else{
+                System.out.println("ACESSO PERMITIDO!");
+            }
+        }
+    }
+
+    ///////////////////////////////////////
+    ///////////////////////////////////////
+
+    public static void exercício_40(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Nome do produto: ");
+        String nome = s.nextLine();
+        System.out.print("Qual a quantidade: ");
+        Double quantidade = s.nextDouble();
+
+        Double preço = 10.0;
+        Double quantidadeMenorOuIgual5 = quantidade * preço / 100 * 98;
+        Double quantidadeMaior5Menor10 = quantidade * preço / 100 * 97;
+        Double quantidadeMaior10 = quantidade * preço / 100 * 95;
+
+        if(quantidade <= 5) {
+            System.out.println("Vai dar o total de: " + quantidadeMenorOuIgual5 + " reais");
+        }
+        else if (quantidade > 5 && quantidade <= 10) {
+            System.out.println("Vai dar o total de: " + quantidadeMaior5Menor10 + " reais");
+        }
+        else {
+            System.out.println("Vai dar o total de: " + quantidadeMaior10 + " reais");
+        }
+    }
+    public static void exercício_41(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_42(){
+        Scanner s = new Scanner(System.in);
+
+        int anoAtual = 2024;
+
+        System.out.println("Qual é o código do empregado");
+        int código = s.nextInt();
+        System.out.println("Qual é o ano de nascimento:");
+        int nascimento = s.nextInt();
+        System.out.println("Qual é o seu ano de ingresso na impresa:");
+        int ingresso = s.nextInt();
+
+        int idade = anoAtual - nascimento;
+        int tempoDeTrabalho = anoAtual - ingresso;
+
+        System.out.println("IDADE: " + idade);
+        System.out.println("TEMPO DE TRABALHO: " + tempoDeTrabalho);
+
+        if(idade >= 60 && tempoDeTrabalho >= 25) {
+            System.out.println("Requerer aposentadoria");
+        }
+        else {
+            System.out.println("Não requerer");
+        }
+    }
+    public static void exercício_43(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_44(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Escreva um valor:");
+        int n1 = s.nextInt();
+        System.out.println("Escreva outro valor:");
+        int n2 = s.nextInt();
+
+        if(n2 == 0) {
+            for(int r = 0; r == 0 ; r++){
+                System.out.println("Escreva outro valor diferente de ZERO:");
+                n2 = s.nextInt();
+            }
+            System.out.println(n1 / n2);
+        }
+        else{
+            System.out.println(n1 / n2);
+        }
+    }
+
+    ///////////////////////////////////////
+    ///////////////////////////////////////
+
+    public static void exercício_50(){
+
+        for(int n = 1; n < 11; n++){
+            System.out.println(n + "  ");
+        }
+    }
+    public static void exercício_51(){
+
+        for(int n = 10; n > 0; n--){
+            System.out.print(n + "  ");
+        }
+    }
+    public static void exercício_52(){
+
+        for(int n10 = 101; n10 < 111; n10 ++){
+            System.out.print(n10 + "  ");
+        }
+    }
+    public static void exercício_53(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva o valor de N: ");
+        int n = s.nextInt();
+
+        for(int ne = 1; ne < n; ne++){
+            System.out.println(ne);
+        }
+    }
+    public static void exercício_54(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva o valor de N: ");
+        int n = s.nextInt();
+
+        while(n < 0) {
+            System.out.print("Escreva um valor MAIOR que 0 para N: ");
+            n = s.nextInt();
+        }
+        for(int ne = 1; ne < n; ne++){
+            System.out.println(ne);
+        }
+    }
+    public static void exercício_55(){
+
+        for(int t8 = 1; t8 < 11; t8++) {
+            System.out.println(t8 * 8);
+        }
+    }
+    public static void exercício_56(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva um valor de 1 a 10: ");
+        int v = s.nextInt();
+
+        for(int contador = 1; contador < 11; contador++) {
+            System.out.println(contador * v);
+        }
+    }
+    public static void exercício_57(){
+
+        for(int n = 1; n < 11; n++){
+            System.out.println(n + "  ");
+        }
+    }
+    public static void exercício_58(){
+
+        int contador = 10;
+
+        while(contador > 0){
+            System.out.print(contador + "  ");
+            contador = contador - 1;
+        }
+    }
+    public static void exercício_59(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva 1° valor: ");
+        int v1 = s.nextInt();
+        System.out.print("Escreva 2° valor: ");
+        int v2 = s.nextInt();
+        System.out.print("Escreva 3° valor: ");
+        int v3 = s.nextInt();
+        System.out.print("Escreva 4° valor: ");
+        int v4 = s.nextInt();
+        System.out.print("Escreva 5° valor: ");
+        int v5 = s.nextInt();
+        System.out.print("Escreva 6° valor: ");
+        int v6 = s.nextInt();
+        System.out.print("Escreva 7° valor: ");
+        int v7 = s.nextInt();
+        System.out.print("Escreva 8° valor: ");
+        int v8 = s.nextInt();
+        System.out.print("Escreva 9° valor: ");
+        int v9 = s.nextInt();
+        System.out.print("Escreva 10° valor: ");
+        int v10 = s.nextInt();
+
+        if(v1 < 0) {
+            System.out.print(v1 + "  ");
+        }
+        if(v2 < 0) {
+            System.out.print(v2 + "  ");
+        }
+        if(v3 < 0) {
+            System.out.print(v3 + "  ");
+        }
+        if(v4 < 0) {
+            System.out.print(v4 + "  ");
+        }
+        if(v5 < 0) {
+            System.out.print(v5 + "  ");
+        }
+        if(v6 < 0) {
+            System.out.print(v6 + "  ");
+        }
+        if(v7 < 0) {
+            System.out.print(v7 + "  ");
+        }
+        if(v8 < 0) {
+            System.out.print(v8 + "  ");
+        }
+        if(v9 < 0) {
+            System.out.print(v9 + "  ");
+        }
+        if(v10 < 0) {
+            System.out.print(v10 + "  ");
+        }
+    }
+    public static void exercício_60(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_61(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_62(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_63(){
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva 1° valor: ");
+        int v1 = s.nextInt();
+        System.out.print("Escreva 2° valor: ");
+        int v2 = s.nextInt();
+        System.out.print("Escreva 3° valor: ");
+        int v3 = s.nextInt();
+        System.out.print("Escreva 4° valor: ");
+        int v4 = s.nextInt();
+        System.out.print("Escreva 5° valor: ");
+        int v5 = s.nextInt();
+        System.out.print("Escreva 6° valor: ");
+        int v6 = s.nextInt();
+        System.out.print("Escreva 7° valor: ");
+        int v7 = s.nextInt();
+        System.out.print("Escreva 8° valor: ");
+        int v8 = s.nextInt();
+        System.out.print("Escreva 9° valor: ");
+        int v9 = s.nextInt();
+        System.out.print("Escreva 10° valor: ");
+        int v10 = s.nextInt();
+
+        System.out.println(v1 + v2 + v3 + v4 + v5 + v6 + v7 + v8 + v9 + v10);
+    }
+    public static void exercício_64(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+    public static void exercício_65(){
+        Scanner s = new Scanner(System.in);
+
+
+    }
+}
