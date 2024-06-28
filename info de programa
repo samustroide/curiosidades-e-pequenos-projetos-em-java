@@ -1,0 +1,3 @@
+public class Info {
+    static int senhaP = 9999;
+}
