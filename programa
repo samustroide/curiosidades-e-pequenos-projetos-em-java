@@ -1,0 +1,299 @@
+import java.util.Scanner;
+
+public class Programa extends Info {
+    public static void main(String[] args) {
+        try {
+        programa();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void programa() throws InterruptedException {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Escreva a senha: ");
+        int senhaD = s.nextInt();
+
+        while (senhaP != senhaD) {
+            System.out.print("Seu BESTA,aqui tem SEGURANÇA\n" +
+                    "TENTA DE NOVO: ");
+            senhaD = s.nextInt();
+        }
+        if (senhaD == senhaP) {
+            System.out.println("\n\n\n\nOlá Samuel,o que você quer fazer:\n" +
+                    "digite 1 para Calculadoura\n" +
+                    "digite 2 para Subtração de dinheiro\n" +
+                    "digite 3 para Adição de Dinheiro\n" +
+                    "digite 4 para Positivo ou Negativo\n" +
+                    "digite 5 para SAIR\n" +
+                    "digite 6 para ENCERRAR O PROGRAMA\n" +
+                    "digite 7 para Temporizador\n" +
+                    "digite 8 para Cronômetro");
+            int r = s.nextInt();
+            if (r == 1) {
+                System.out.println("Você escolheu a CALCULADOURA\n" +
+                        "Escreva 1 para Somar\n" +
+                        "Escreva 2 para Subtrair\n" +
+                        "Escreva 3 para Multiplicar\n" +
+                        "Escreva 4 para Dividir\n");
+                int rc = s.nextInt();
+                if (rc == 1) {
+                    System.out.print("Escreva o primeiro número: ");
+                    int n1 = s.nextInt();
+                    System.out.print("Escreva o segundo número: ");
+                    int n2 = s.nextInt();
+
+                    int nf = n1 + n2;
+                    System.out.println("O resultado é igual à " + nf);
+                } else if (rc == 2) {
+                    System.out.print("Escreva o primeiro número: ");
+                    int n1 = s.nextInt();
+                    System.out.print("Escreva o segundo número: ");
+                    int n2 = s.nextInt();
+
+                    int nf = n1 - n2;
+                    System.out.println("O resultado é igual à " + nf);
+                } else if (rc == 3) {
+                    System.out.print("Escreva o primeiro número: ");
+                    int n1 = s.nextInt();
+                    System.out.print("Escreva o segundo número: ");
+                    int n2 = s.nextInt();
+
+                    int nf = n1 * n2;
+                    System.out.println("O resultado é igual à " + nf);
+                } else if (rc == 4) {
+                    System.out.print("Escreva o primeiro número: ");
+                    int n1 = s.nextInt();
+                    System.out.print("Escreva o segundo número: ");
+                    int n2 = s.nextInt();
+
+                    int nf = n1 / n2;
+                    System.out.println("O resultado é igual à " + nf);
+                } else {
+                    System.out.println("Vai cagar.Eu ainda te falei as opções");
+                }
+            } else if (r == 2) {
+                System.out.print("Vovê escolheu SUBTRAÇÃO DE DINHEIRO\n" +
+                        "Quanto de dinheiro você têm: ");
+                Double dt = s.nextDouble();
+                System.out.print("Quanto de dinheiro você gastou: ");
+                Double dg = s.nextDouble();
+
+                Double dnt = dt - dg;
+
+                if (dnt > 0) {
+                    System.out.println("Você ainda têm " + dnt + " reais");
+                } else if (dnt == 0) {
+                    System.out.println("Você não tem nada");
+                }
+            } else if (r == 3) {
+                System.out.print("Você escolheu ADIÇÃO DE DINHEIRO\n" +
+                        "Quanto de dinheiro você têm: ");
+                Double dt = s.nextDouble();
+                System.out.print("Quanto de dinheiro você adicionou: ");
+                Double dg = s.nextDouble();
+
+                Double dnt = dt + dg;
+
+                if (dnt > 0) {
+                    System.out.println("Você ainda têm " + dnt + " reais");
+                } else if (dnt == 0) {
+                    System.out.println("Você não tem nada");
+                } else if (dnt < 0) {
+                    System.out.println("Você ainda têm uma dívida de" + dnt + "reais");
+                }
+            } else if (r == 4) {
+                System.out.println("Você escolheu: POSITIVO OU NEGATIVO\n" +
+                        "digite um número");
+                int n = s.nextInt();
+
+                if (n > 0) {
+                    System.out.println("o número " + n + " é positivo");
+                } else if (n < 0) {
+                    System.out.println("o número " + n + " é negativo");
+                } else {
+                    System.out.println("esse número é igual a zero");
+                }
+            } else if (r == 6) {
+                System.out.println("");
+            }
+            else if(r == 7) {
+                System.out.println("Você escolheu temporizador");
+                System.out.print("quantos minutos: ");
+                int tem = s.nextInt();
+
+                for (int t = tem * 60; t >= 0; t--) {
+                    Thread.sleep(1000);
+                    System.out.println(t);
+                    if (t == 21) {
+                        System.out.println("CHEGOU NO SEU RECORDE DE 21 SEGUNDOS");
+                    }
+                    if (t == 0) {
+                        System.out.println("ACABOU O TEMPO");
+                    }
+                }
+            }
+            else if(r == 8) {
+                System.out.println("Você escolheu cronômetro");
+                for (int t = 0; t <= 600; t++) {
+                    Thread.sleep(1000);
+                    System.out.println(t);
+                    if (t == 21) {
+                        System.out.println("CHEGOU NO SEU RECORDE DE 21 SEGUNDOS");
+                    }
+                    if (t == 600) {
+                        System.out.println("DESCULPE,MAS EU DEIXEI O LIMITE DE 10 MINUTOS");
+                    }
+                }
+            }
+            while (r == 5) {
+                System.out.print("Escreva a senha: ");
+                senhaD = s.nextInt();
+
+                while (senhaP != senhaD) {
+                    System.out.print("Seu BESTA,aqui tem SEGURANÇA\n" +
+                            "TENTA DE NOVO: ");
+                    senhaD = s.nextInt();
+                }
+                if (senhaD == senhaP) {
+                    System.out.println("Olá Samuel,o que você quer fazer:\n" +
+                            "digite 1 para Calculadoura\n" +
+                            "digite 2 para Subtração de dinheiro\n" +
+                            "digite 3 para Adição de Dinheiro\n" +
+                            "digite 4 para Positivo ou Negativo\n" +
+                            "digite 5 para SAIR\n" +
+                            "digite 6 para ENCERRAR O PROGRAMA\n" +
+                            "digite 7 para Temporizador\n" +
+                            "digite 8 para Cronômetro");
+                    r = s.nextInt();
+                    if (r == 1) {
+                        System.out.println("Você escolheu CALCULADOURA\n" +
+                                "Escreva 1 para Somar\n" +
+                                "Escreva 2 para Subtrair\n" +
+                                "Escreva 3 para Multiplicar\n" +
+                                "Escreva 4 para Dividir\n");
+                        int rc = s.nextInt();
+                        if (rc == 1) {
+                            System.out.print("Escreva o primeiro número: ");
+                            int n1 = s.nextInt();
+                            System.out.print("Escreva o segundo número: ");
+                            int n2 = s.nextInt();
+
+                            int nf = n1 + n2;
+                            System.out.println("O resultado é igual à " + nf);
+                        } else if (rc == 2) {
+                            System.out.print("Escreva o primeiro número: ");
+                            int n1 = s.nextInt();
+                            System.out.print("Escreva o segundo número: ");
+                            int n2 = s.nextInt();
+
+                            int nf = n1 - n2;
+                            System.out.println("O resultado é igual à " + nf);
+                        } else if (rc == 3) {
+                            System.out.print("Escreva o primeiro número: ");
+                            int n1 = s.nextInt();
+                            System.out.print("Escreva o segundo número: ");
+                            int n2 = s.nextInt();
+
+                            int nf = n1 * n2;
+                            System.out.println("O resultado é igual à " + nf);
+                        } else if (rc == 4) {
+                            System.out.print("Escreva o primeiro número: ");
+                            int n1 = s.nextInt();
+                            System.out.print("Escreva o segundo número: ");
+                            int n2 = s.nextInt();
+
+                            int nf = n1 / n2;
+                            System.out.println("O resultado é igual à " + nf);
+                        } else {
+                            System.out.println("Vai cagar.Eu ainda te falei as opções");
+                        }
+                    } else if (r == 2) {
+                        System.out.print("Você escolheu SUBTRAÇÃO DE DINHEIRO\n" +
+                                "Quanto de dinheiro você têm: ");
+                        Double dt = s.nextDouble();
+                        System.out.print("Quanto de dinheiro você gastou: ");
+                        Double dg = s.nextDouble();
+
+                        Double dnt = dt - dg;
+
+                        if (dnt > 0) {
+                            System.out.println("Você ainda têm " + dnt + " reais");
+                        } else if (dnt == 0) {
+                            System.out.println("Você não tem nada");
+                        }
+                    } else if (r == 3) {
+                        System.out.print("Você escolheu ADIÇÃO DE DINHEIRO\n" +
+                                "Quanto de dinheiro você têm: ");
+                        Double dt = s.nextDouble();
+                        System.out.print("Quanto de dinheiro você adicionou: ");
+                        Double dg = s.nextDouble();
+
+                        Double dnt = dt + dg;
+
+                        if (dnt > 0) {
+                            System.out.println("Você ainda têm " + dnt + " reais");
+                        } else if (dnt == 0) {
+                            System.out.println("Você não tem nada");
+                        } else if (dnt < 0) {
+                            System.out.println("Você ainda têm uma dívida de" + dnt + "reais");
+                        }
+                    } else if (r == 4) {
+                        System.out.println("Você escolheu: POSITIVO OU NEGATIVO\n" +
+                                "digite um número");
+                        int n = s.nextInt();
+
+                        if (n > 0) {
+                            System.out.println("o número " + n + " é positivo");
+                        } else if (n < 0) {
+                            System.out.println("o número " + n + " é negativo");
+                        } else {
+                            System.out.println("esse número é igual a zero");
+                        }
+                    }
+                    else if (r == 6) {
+                        System.out.println("");
+                    }
+                    else if(r == 7) {
+                        System.out.println("Você escolheu temporizador");
+                        System.out.print("quantos minutos: ");
+                        int tem = s.nextInt();
+
+                        for (int t = tem * 60; t >= 0; t--) {
+                            Thread.sleep(1000);
+                            System.out.println(t);
+                            if (t == 21) {
+                                System.out.println("CHEGOU NO SEU RECORDE DE 21 SEGUNDOS");
+                            }
+                            if (t == 0) {
+                                System.out.println("ACABOU O TEMPO");
+                            }
+                        }
+                    }
+                    else if(r == 8) {
+                        System.out.println("Você escolheu cronômetro");
+                        for (int t = 0; t <= 600; t++) {
+                            Thread.sleep(1000);
+                            System.out.println(t);
+                            if (t == 21) {
+                                System.out.println("CHEGOU NO SEU RECORDE DE 21 SEGUNDOS");
+                            }
+                            if (t == 600) {
+                                System.out.println("DESCULPE,MAS EU DEIXEI O LIMITE DE 10 MINUTOS");
+                            }
+                        }
+                    }
+                }
+            }
+            if(r > 8) {
+                System.out.println("Para de zuar com a minha cara\n" +
+                        "Eu ainda dei as opções");
+            }
+            if(r < 1) {
+                System.out.println("Para de zuar com a minha cara\n" +
+                        "Eu ainda dei as opções");
+            }
+        }
+    }
+}
